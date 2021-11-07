@@ -54,6 +54,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\TetrisBlock.cs" />
+    <Compile Include="Assets\Scripts\SpawnTetromino.cs" />
+    <Compile Include="Assets\Scripts\Game.cs" />
+    <Compile Include="Assets\Scripts\Tetromino.cs" />
+    <Compile Include="Assets\Scripts\Grid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

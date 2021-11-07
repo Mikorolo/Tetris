@@ -51,10 +51,10 @@ public class TetrisBlock : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
+            transform.Rotate(0, 0, 90);
             if(!checkMove())
             {
-                transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+                transform.Rotate(0, 0, -90);
             }
         }
 
@@ -63,11 +63,13 @@ public class TetrisBlock : MonoBehaviour
             ? fallTime / 10 : fallTime))
         {
             transform.position += new Vector3(0, -1, 0);
-            previousTime = Time.time;
             if (!checkMove())
             {
                 transform.position -= new Vector3(0, -1, 0);
+                this.enabled = false;
+                FindObjectOfType<SpawnTetromino>().NewTetromino();
             }
+            previousTime = Time.time;
         }
     }
 
